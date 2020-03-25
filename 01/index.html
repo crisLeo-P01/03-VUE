@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Curso con Vue</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1>{{titulo}}</h1> <!--interpolación-->
+
+    <ul>
+      <li v-for="fruta of frutas"> <!--Ciclo FOR a través de un LOOP-->
+        {{fruta.nombre}} - {{fruta.cantidad}}
+        <span v-if="fruta.cantidad === 0"> - Sin Stock</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="app2">
+    <h1>{{ titulo2 }}</h1>
+    <ul>
+      <li v-for="insumo of insumos">
+        {{ insumo.componente }}
+        <span v-if="insumo.disponible === 'no'"> - No disponible</span>
+        <span v-if="insumo.disponible === 'si'"> - Disponible</span>
+      </li>
+    </ul>
+  </div>
+
+  <div id="app3">
+    <h1> {{ titulo3 }}</h1>
+    <ul>
+      <li v-for="alumno of alumnos">
+        {{ alumno.nombre }}
+        <span v-if="alumno.presente === 'si'"> - Presente</span>
+        <span v-if="alumno.presente === 'no'"> - Ausente</span>
+      </li>
+    </ul>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/1-app.js"></script>
+</body>
+</html>
